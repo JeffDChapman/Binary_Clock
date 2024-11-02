@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
             switch (numclolom)
             {
                 case 1:
-                    color1columnDots(time, label01, label02, label02, label02);
+                    color1columnDots(time, label01, label02, null, null);
                     break;
                 case 2:
                     color1columnDots(time, label11, label12, label13, label14);
@@ -61,10 +61,14 @@ namespace WindowsFormsApplication1
             else
                 { lab2.BackColor = onColor; }
 
-            if (resultBin.Substring(1, 1) == "0")
-                { lab3.BackColor = offColor; }
-            else
-                { lab3.BackColor = onColor; }
+            try
+            {
+                if (resultBin.Substring(1, 1) == "0")
+                    { lab3.BackColor = offColor; }
+                else
+                    { lab3.BackColor = onColor; }
+            }
+            catch { }
 
             try
             {
